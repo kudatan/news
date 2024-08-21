@@ -24,9 +24,8 @@ export class ArticleSeed {
                 shortDescription: faker.lorem.paragraph(),
                 fullDescription: faker.lorem.paragraphs(3),
                 likes: faker.datatype.number({ min: 0, max: 2000000 }),
-                date: faker.date.past(),
                 image: faker.image.imageUrl(),
-                categoryId: categories[Math.floor(Math.random() * categories.length)],
+                category: categories[Math.floor(Math.random() * categories.length)],
             });
 
             await this.articleRepository.save(article);

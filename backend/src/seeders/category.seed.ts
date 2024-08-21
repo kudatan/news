@@ -13,7 +13,7 @@ export class CategorySeed {
 
     async run() {
         const categories = [];
-        await this.categoryRepository.query('TRUNCATE TABLE "category" CASCADE');
+        await this.categoryRepository.query('TRUNCATE TABLE "categories" CASCADE');
         for (let i = 0; i < 5; i++) {
             const category = this.categoryRepository.create({
                 name: faker.commerce.department(),

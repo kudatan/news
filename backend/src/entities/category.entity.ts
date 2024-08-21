@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { Article } from './article.entity';
 
-@Entity()
+@Entity('categories')
 export class Category {
     @PrimaryGeneratedColumn()
     id: string;
@@ -9,6 +9,6 @@ export class Category {
     @Column()
     name: string;
 
-    @OneToMany(() => Article, article => article.categoryId)
+    @OneToMany(() => Article, article => article.category)
     articles: Article[];
 }

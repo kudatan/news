@@ -19,14 +19,18 @@ export class ArticleService {
             throw new Error('Category not found');
         }
         return await this.articleRepository.find({
-            where: { categoryId: category },
+            where: { category: category },
             take: 10,
             skip: (page - 1) * 10,
-            order: { date: 'DESC' },
+            order: { createdAt: 'DESC' },
         });
     }
 
     async getArticleById(id: number): Promise<Article> {
         return await this.articleRepository.findOne({ where: { id } });
+    }
+
+    async findAll(): Promise<Article[]> {
+        return await this.articleRepository.find({ relations: ['category'] });
     }
 }

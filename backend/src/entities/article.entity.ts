@@ -1,13 +1,13 @@
 import {Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne} from 'typeorm';
 import {Category} from './category.entity';
 
-@Entity()
+@Entity('articles')
 export class Article {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(() => Category, category => category.articles)
-    categoryId: Category;
+    @ManyToOne(() => Category, category => category.articles, { eager: true })
+    category: Category;
 
     @Column()
     title: string;
@@ -20,9 +20,6 @@ export class Article {
 
     @Column({default: 0})
     likes: number;
-    
-    @Column()
-    date: Date;
 
     @Column()
     image: string;

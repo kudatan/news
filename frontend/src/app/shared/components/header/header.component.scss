@@ -1,0 +1,40 @@
+.header {
+  background: #7e9fec;
+  max-height: 100px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 0 18px 0 rgb(81 81 81 / 75%);
+
+  &-logo {
+    img {
+      max-width: 50px;
+    }
+    margin-right: 15px;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    color: #ffffff;
+
+    &-logo {
+      font-size: 30px;
+      font-weight: 700;
+      margin-right: 5px;
+    }
+
+    &-hope {
+      font-size: 13px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
