@@ -7,8 +7,11 @@ export class ArticleController {
     constructor(private readonly articleService: ArticleService) {}
 
     @Get()
-    async findAll(): Promise<Article[]> {
-        return this.articleService.findAll();
+    async findAll(
+        @Query('page') page: number = 1,
+        @Query('limit') limit: number = 10,
+    ): Promise<{ data: Article[], total: number }> {
+        return this.articleService.findAll(page, limit);
     }
     
     @Get('category/:categoryId')

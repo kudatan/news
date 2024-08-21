@@ -30,7 +30,17 @@ export class ArticleService {
         return await this.articleRepository.findOne({ where: { id } });
     }
 
-    async findAll(): Promise<Article[]> {
-        return await this.articleRepository.find({ relations: ['category'] });
+    async findAll(page: number = 1, limit: number = 10): Promise<{ data: Article[], total: number }> {
+        const [result, total] = await this.articleRepository.findAndCount({
+            relations: ['category'],
+            take: limit,
+            skip: (page - 1) * limit,
+            order: { createdAt: 'DESC' },
+        });
+
+        return {
+            data: result,
+            total,
+        };
     }
 }

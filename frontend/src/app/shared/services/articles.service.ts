@@ -13,7 +13,9 @@ export class ArticlesService {
 
   constructor(private http: HttpClient) {
   }
-  getAllArticles(articles: ArticleInterface): Observable<ArticleInterface> {
-    return this.http.post<ArticleInterface>(`${this.baseUrl}/api/auth/register`, articles);
+  getArticles(page: number, limit: number): Observable<{ data: ArticleInterface[], total: number }> {
+    return this.http.get<{ data: ArticleInterface[], total: number }>(
+      `${this.baseUrl}/api/articles?page=${page}&limit=${limit}`
+    );
   }
 }
