@@ -5,6 +5,7 @@ import {DestroySubscription} from "../../helpers/destroy-subscription";
 import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 import {ArticleInterface} from "../../interfaces/article.interface";
 import {DatePipe, NgForOf} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-page',
@@ -22,7 +23,7 @@ export class MainPageComponent extends DestroySubscription implements OnInit {
   totalArticles: number = 0;
   articlesPerPage: number = 10;
 
-  constructor(private articlesService: ArticlesService) {
+  constructor(private articlesService: ArticlesService, private router: Router) {
     super()
   }
   ngOnInit() {
@@ -55,4 +56,7 @@ export class MainPageComponent extends DestroySubscription implements OnInit {
     return Math.ceil(this.totalArticles / this.articlesPerPage);
   }
 
+  goToArticleDetail(id: number) {
+    this.router.navigate(['/articles', id]);
+  }
 }

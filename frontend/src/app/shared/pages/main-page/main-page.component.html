@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngFor="let article of articles" class="article">
+  <div *ngFor="let article of articles" class="article" (click)="goToArticleDetail(article.id)">
     <h2>{{ article.title }}</h2>
     <p><span class="bold">Short description: </span>{{ article.shortDescription }}</p>
     <div class="article-img">

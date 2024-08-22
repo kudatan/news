@@ -18,4 +18,8 @@ export class ArticlesService {
       `${this.baseUrl}/api/articles?page=${page}&limit=${limit}`
     );
   }
+
+  getArticleById(id: number): Observable<ArticleInterface> {
+    return this.http.get<ArticleInterface>(`${this.baseUrl}/api/articles/${id}`);
+  }
 }

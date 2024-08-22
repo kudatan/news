@@ -1,0 +1,54 @@
+.one-article {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  img {
+    border-radius: 12px;
+    width: 50%;
+    height: auto;
+  }
+
+  h2 {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 30px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  span {
+    font-size: 20px;
+  }
+}
+
+.container {
+  margin: 100px 0 70px;
+
+  a {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    color: #7e9eec;
+  }
+}
