@@ -10,8 +10,9 @@ export class ArticleController {
     async findAll(
         @Query('page') page: number = 1,
         @Query('limit') limit: number = 10,
+        @Query('categoryId') categoryId?: number,
     ): Promise<{ data: Article[], total: number }> {
-        return this.articleService.findAll(page, limit);
+        return this.articleService.findAll(page, limit, categoryId);
     }
     
     @Get('category/:categoryId')

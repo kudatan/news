@@ -2,7 +2,7 @@
   <a href="/news">GO BACK</a>
   <div *ngIf="article" class="one-article">
     <h2>{{ article.title }}</h2>
-    <p>{{ article.fullDescription }}</p>
+    <p><span class="bold">Long Description: </span>{{ article.fullDescription }}</p>
     <img [src]="article.image" alt="{{ article.title }}">
     <div class="one-article-info">
       <span>

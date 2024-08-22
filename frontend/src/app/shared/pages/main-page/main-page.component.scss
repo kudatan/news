@@ -98,3 +98,23 @@
     font-size: 20px;
   }
 }
+
+.container {
+  margin-top: 100px;
+
+  .filter {
+    margin: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  select {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+}
