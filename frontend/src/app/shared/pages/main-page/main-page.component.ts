@@ -55,7 +55,7 @@ export class MainPageComponent extends DestroySubscription implements OnInit {
   onCategoryChange(event: Event) {
     const selectElement = event.target as HTMLSelectElement;
     const categoryId = selectElement.value;
-    this.selectedCategoryId = categoryId ? +categoryId : undefined;
+    this.selectedCategoryId = categoryId && categoryId !== "undefined" ? +categoryId : undefined;
     this.currentPage = 1;
     this.loadArticles();
   }
